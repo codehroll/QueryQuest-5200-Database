@@ -19,6 +19,7 @@ export default function Profile() {
     const updatedProfile = await client.updateUserProfile(profile);
     dispatch(setCurrentUser(updatedProfile));
     setEditMode(false); // Exit edit mode after updating
+    fetchProfile();
   };
   const signout = () => {
     dispatch(setCurrentUser(null));
